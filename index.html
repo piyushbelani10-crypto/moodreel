@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171717" />
+    <meta
+      name="description"
+      content="Mood-based movie recommendations for cinephiles, with summaries and streaming platform searches."
+    />
+    <title>Moodreel | Cinephile Movie Recommendations</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro" aria-labelledby="app-title">
+        <div class="brand-row">
+          <span class="mark" aria-hidden="true"></span>
+          <span class="brand">Moodreel</span>
+        </div>
+        <div class="intro-grid">
+          <div>
+            <p class="eyebrow">Movie recommendations for cinephiles</p>
+            <h1 id="app-title">Find a film that fits the room inside your head.</h1>
+          </div>
+          <p class="intro-copy">
+            Pick a mood, tune the pace, and get a sharper watchlist with a short critic-style
+            note plus places to start checking for availability.
+          </p>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Recommendation controls">
+        <div class="control-block">
+          <div class="label-row">
+            <h2>Your Mood</h2>
+            <span id="result-count">0 films</span>
+          </div>
+          <div class="mood-grid" id="mood-grid"></div>
+        </div>
+
+        <div class="filter-row">
+          <label class="select-wrap">
+            <span>Pace</span>
+            <select id="pace-filter">
+              <option value="all">Any pace</option>
+              <option value="slow">Slow burn</option>
+              <option value="balanced">Balanced</option>
+              <option value="fast">Fast moving</option>
+            </select>
+          </label>
+          <label class="select-wrap">
+            <span>Era</span>
+            <select id="era-filter">
+              <option value="all">Any era</option>
+              <option value="classic">Classic</option>
+              <option value="modern">Modern</option>
+              <option value="recent">Recent</option>
+            </select>
+          </label>
+          <label class="search-wrap">
+            <span>Search</span>
+            <input id="search-input" type="search" placeholder="Director, title, vibe..." />
+          </label>
+        </div>
+      </section>
+
+      <section class="recommendations" aria-labelledby="recommendations-title">
+        <div class="section-head">
+          <div>
+            <h2 id="recommendations-title">Recommended Watchlist</h2>
+            <p id="mood-note"></p>
+          </div>
+          <button id="surprise-button" class="icon-button" type="button" title="Surprise me">
+            <span aria-hidden="true">↻</span>
+            <span>Surprise</span>
+          </button>
+        </div>
+        <div class="movie-grid" id="movie-grid"></div>
+        <p class="availability-note">
+          Streaming availability changes often by country. Platform buttons open a search page so
+          you can confirm the current option in your region.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
